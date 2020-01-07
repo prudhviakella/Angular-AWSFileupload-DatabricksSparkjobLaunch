@@ -1,0 +1,39 @@
+<mat-toolbar>
+  <img
+    src="../assets/img/Sito.PNG"
+    alt="SITO Mobile Logo"
+    style="position: relative; padding: 70px;"
+  />
+</mat-toolbar>
+<div
+  style="top: 100px;position: relative;background-color: #ddd;min-height: 606px; padding: 30px;"
+>
+  <nav style="position: relative;">
+    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+      <a
+        routerLinkActive="active"
+        [routerLink]="'/main/submit'"
+        class="nav-item nav-link "
+        id="nav-daily-tab"
+        data-toggle="tab"
+        role="tab"
+        aria-controls="nav-daily"
+        aria-selected="false"
+        >Submit Request</a
+      >
+      &nbsp;
+      <a
+        routerLinkActive="active"
+        [routerLink]="'/main/search'"
+        class="nav-item nav-link"
+        id="nav-home-tab"
+        data-toggle="tab"
+        role="tab"
+        aria-controls="nav-home"
+        aria-selected="true"
+        >Search for Request</a
+      >
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

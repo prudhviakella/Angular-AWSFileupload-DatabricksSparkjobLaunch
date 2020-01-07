@@ -1,0 +1,63 @@
+.custom{
+  font-size: 8.5pt;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.input_width{
+  width: 100%
+}
+.mat-raised-button{
+  background-color:rgb(2, 38, 56);
+  color: rgb(38, 207, 114);;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
+  font-weight: bold
+}
+
+.mat-raised-button.mat-accent[disabled], .mat-button.mat-primary[disabled], .mat-button.mat-warn[disabled], .mat-button[disabled][disabled], .mat-icon-button.mat-accent[disabled], .mat-icon-button.mat-primary[disabled], .mat-icon-button.mat-warn[disabled], .mat-icon-button[disabled][disabled], .mat-stroked-button.mat-accent[disabled], .mat-stroked-button.mat-primary[disabled], .mat-stroked-button.mat-warn[disabled], .mat-stroked-button[disabled][disabled]{
+  color:red
+}
+.mat-raised-button.mat-primary .mat-button-focus-overlay {
+  background-color: #3f7f69;
+}
+
+.mybox{
+  background-color: lightgrey;
+  text-align: center;
+  width: 120px;
+  padding: 10px;
+  margin:10px;
+  font-size: 8.5pt;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.myboxone{
+  background-color: lightgrey;
+  text-align: center;
+  width: 150px;
+  padding: 10px;
+  margin:10px;
+  font-size: 8.5pt;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#x {
+  position: relative;
+  left: 55%;
+  top: 200%;
+  width: 1px;
+  height: 20px;
+}
+button.boxclose{
+  float:right;
+  margin-top:-27px;
+  margin-right:-22px;
+  color:black;
+  border: none;
+  cursor:pointer;
+
+  overflow: hidden;
+  outline:none;
+  width: 20%;  height: 1%;
+  font-size: 20px;
+  background-color: transparent
+}
+
+.boxclose:before {
+  content: "×";
+}
+

@@ -1,0 +1,72 @@
+<br />
+<ngx-loading
+  [show]="loading"
+  [config]="{
+    fullScreenBackdrop: true,
+    backdropBorderRadius: '3px',
+    primaryColour: '#05386B',
+    secondaryColour: '#379683',
+    tertiaryColour: '#5CDB95'
+  }"
+  [template]="customLoadingTemplate"
+></ngx-loading>
+<mat-card class="custom">
+  <div fxLayout fxLayoutAlign="center center">
+    <mat-form-field fxFlex="30%">
+      <input
+        matInput
+        type="text"
+        (keyup)="doFilter($event.target.value)"
+        placeholder="Filter"
+      />
+    </mat-form-field>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <ng-container matColumnDef="sfid">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>SFID</th>
+      <td class="custom" mat-cell *matCellDef="let element">
+        {{ element.sfid }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td class="custom" mat-cell *matCellDef="let element">
+        {{ element.name }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="cid">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>CID</th>
+      <td class="custom" mat-cell *matCellDef="let element">
+        {{ element.cid }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="runid">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Run ID</th>
+      <td class="custom" mat-cell *matCellDef="let element">
+        {{ element.runid }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Created Date</th>
+      <td class="custom" mat-cell *matCellDef="let element">
+        {{ element.createdAt | date }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="checkstatus">
+      <th mat-header-cell *matHeaderCellDef>Check Status</th>
+      <td class="custom" mat-cell *matCellDef="let element">
+        <button mat-raised-button (click)="onclickme(element)">
+          Click Me
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <br />
+  <mat-paginator [pageSize]="6" [pageSizeOptions]="[2, 4, 6, 10, 20]">
+  </mat-paginator>
+</mat-card>

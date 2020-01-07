@@ -1,0 +1,22 @@
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
+}
+
+th.mat-header-cell {
+  text-align: left;
+  max-width: 300px;
+}
+.custom{
+  font-size: 8.5pt;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mat-raised-button{
+  background-color:rgb(2, 38, 56);
+  color: rgb(38, 207, 114);;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
+  font-weight: bold
+}

@@ -1,0 +1,52 @@
+<mat-dialog-content fxFlex>
+  <mat-list>
+    <mat-list-item>
+      <h1 class="custom">Status &nbsp;:&nbsp; {{ status }}</h1>
+    </mat-list-item>
+    <mat-list-item *ngIf="running">
+      <h1 class="custom">
+        Notebook Status &nbsp;:&nbsp;
+      </h1>
+    </mat-list-item>
+    <mat-list-item *ngIf="running">
+      <h1 class="custom">
+        Running cmd no &nbsp;:&nbsp;
+      </h1>
+    </mat-list-item>
+    <mat-list-item *ngIf="failed">
+      <h1 class="custom">
+        Error Description &nbsp;:&nbsp;{{ data.result.errordesc }}
+      </h1>
+    </mat-list-item>
+    <mat-list-item *ngIf="failed">
+      <h1 class="custom">
+        Exception &nbsp;:&nbsp;
+        <button
+          mat-raised-button
+          (click)="onexceptionclick(data.result.actual_error)"
+        >
+          Click to check
+        </button>
+      </h1>
+    </mat-list-item>
+    <mat-list-item *ngIf="failed">
+      <h1 class="custom">
+        Failed cmd no &nbsp;:&nbsp;{{ data.result.cellno }}
+      </h1>
+    </mat-list-item>
+    <mat-list-item *ngIf="success">
+      <h1 class="custom">
+        Output &nbsp;:&nbsp;
+        <button mat-raised-button (click)="onDownload()">
+          Download
+        </button>
+      </h1>
+    </mat-list-item>
+  </mat-list>
+</mat-dialog-content>
+
+<mat-dialog-actions class="actions">
+  <button class="custom" mat-button mat-dialog-close>
+    Cancel
+  </button>
+</mat-dialog-actions>

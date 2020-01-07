@@ -1,0 +1,184 @@
+<br />
+<ngx-loading
+  [show]="loading"
+  [config]="{
+    fullScreenBackdrop: true,
+    backdropBorderRadius: '3px',
+    primaryColour: '#05386B',
+    secondaryColour: '#379683',
+    tertiaryColour: '#5CDB95'
+  }"
+  [template]="customLoadingTemplate"
+></ngx-loading>
+
+<mat-card *ngIf="!this.showaftersubmit" style="width:800px">
+  <table class="table table-borderless table-format">
+    <thead>
+      <tr>
+        <th width="3%"></th>
+        <th width="3%"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <td>
+        <form [formGroup]="requestform" (ngSubmit)="onSubmit()">
+          <tr class="custom">
+            <mat-form-field class="input_width">
+              <input
+                matInput
+                placeholder="SFID"
+                formControlName="SFID"
+                value=""
+                required
+              />
+              <mat-error *ngIf="f.SFID.hasError('required')">
+                <strong>SFID Required</strong>
+              </mat-error>
+            </mat-form-field>
+          </tr>
+          <tr class="custom">
+            <mat-form-field class="input_width">
+              <input
+                matInput
+                placeholder="Name"
+                formControlName="Name"
+                value=""
+                required
+              />
+              <mat-error *ngIf="f.Name.hasError('required')">
+                <strong>Name Required</strong>
+              </mat-error>
+            </mat-form-field>
+          </tr>
+          <tr class="custom">
+            <mat-form-field class="input_width">
+              <input
+                matInput
+                placeholder="Campaign ID"
+                formControlName="CID"
+                value=""
+                required
+              />
+              <mat-error *ngIf="f.CID.hasError('required')">
+                <strong>CID Required</strong>
+              </mat-error>
+            </mat-form-field>
+          </tr>
+          <tr class="custom">
+            <mat-form-field>
+              <input
+                matInput
+                [matDatepicker]="pickere"
+                formControlName="startdate"
+                placeholder="Start Date"
+                required
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="pickere"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #pickere></mat-datepicker>
+              <mat-error *ngIf="f.startdate.hasError('required')">
+                <strong>Start Date Required</strong>
+              </mat-error>
+            </mat-form-field>
+          </tr>
+          <tr class="custom">
+            <mat-form-field>
+              <input
+                matInput
+                [matDatepicker]="pickere1"
+                formControlName="enddate"
+                placeholder="End Date"
+                required
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="pickere1"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #pickere1></mat-datepicker>
+              <mat-error *ngIf="f.enddate.hasError('required')">
+                <strong>End Date Required</strong>
+              </mat-error>
+            </mat-form-field>
+          </tr>
+          <tr class="custom">
+            <mat-form-field class="input_width">
+              <input
+                matInput
+                placeholder="Frequency"
+                formControlName="totalvisits"
+                value=""
+                required
+              />
+              <mat-error *ngIf="f.totalvisits.hasError('required')">
+                <strong>Total Visits Required</strong>
+              </mat-error>
+            </mat-form-field>
+          </tr>
+          <tr class="custom">
+            <mat-form-field class="input_width">
+              <mat-select
+                placeholder="Filter"
+                formControlName="operator"
+                required
+              >
+                <mat-option value="e"> = </mat-option>
+                <mat-option value="ge"> >= </mat-option>
+                <mat-option value="le"> =< </mat-option>
+                <mat-option value="gr"> > </mat-option>
+                <mat-option value="ls"> < </mat-option>
+              </mat-select>
+              <mat-error *ngIf="f.operator.hasError('required')">
+                <strong>Operator Required</strong>
+              </mat-error>
+            </mat-form-field>
+          </tr>
+          <tr align="center" class="custom">
+            <button
+              mat-raised-button
+              [disabled]="!this.requestform.valid || !this.submitcheck"
+            >
+              Submit
+            </button>
+          </tr>
+        </form>
+      </td>
+      <td>
+        <tr *ngIf="!this.submitcheck">
+          <div class="myboxone">
+            <b>Note: </b>Without uploading input file you cannot submit
+          </div>
+        </tr>
+        <tr *ngFor="let file of Filesexcelinfo; let k = index">
+          <div class="mybox">
+            <button
+              (click)="onDeletecsv(file, k)"
+              class="boxclose"
+              id="boxclose"
+            ></button>
+            {{ file.name }}
+          </div>
+        </tr>
+        <tr align="center">
+          <button mat-raised-button (click)="openUploadDialog()">
+            Upload CSV
+          </button>
+        </tr>
+      </td>
+    </tbody>
+  </table>
+</mat-card>
+
+<mat-card *ngIf="this.showaftersubmit" style="width:800px">
+  <h1 class="custom">Job Created Successfully!!</h1>
+  <p class="custom">Save the below details to track job status></p>
+  <h1 class="custom">Run ID: {{ response_jojpayload.run_id }}</h1>
+  <h1 class="custom">Job ID: {{ response_jojpayload.number_in_job }}</h1>
+  <br />
+  <tr align="center">
+    <button mat-raised-button (click)="newjob()">
+      Click Here To Create Another Job
+    </button>
+  </tr>
+</mat-card>

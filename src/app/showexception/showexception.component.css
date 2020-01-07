@@ -1,0 +1,38 @@
+.custom{
+  font-size: 8.5pt;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mat-raised-button{
+  background-color:rgb(2, 38, 56);
+  color: rgb(38, 207, 114);;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
+  font-weight: bold
+}
+
+.mat-button{
+  background-color:rgb(255, 51, 51);
+  color: rgb(0,0,0);;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
+  font-weight: bold
+}
+
+.actions {
+  justify-content: flex-end;
+}
+
+.container {
+  height: 100%;
+}
+
+.add-files-btn {
+  float: right;
+}
+
+:host {
+  height: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}

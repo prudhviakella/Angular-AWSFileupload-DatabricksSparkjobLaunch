@@ -1,0 +1,75 @@
+/*table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
+}*/
+
+/*mat-header-cell {
+  text-align: left;
+  max-width: 300px;
+}*/
+.custom{
+  font-size: 8.5pt;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mat-table__wrapper .mat-table {
+  min-width: auto !important;
+  width: 100% !important;
+}
+
+.mat-header-row {
+  width: 100%;
+}
+
+.mat-row {
+  width: 100%;
+}
+
+/*.mat-header-cell {
+  font-size: 9.5pt;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-left: 2px solid rgba(0, 0, 0, 0.12);
+  border-right: 2px solid rgba(0, 0, 0, 0.12);
+}
+.mat-cell{
+  font-size: 8.5pt;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: table-cell;
+  height: 48px;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-left: 2px solid rgba(0, 0, 0, 0.12);
+  border-right: 2px solid rgba(0, 0, 0, 0.12);
+  }*/
+  .mat-header-cell {
+    font-size: 8.5pt;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display:flex;
+   justify-content:center;
+
+  }
+  .mat-cell{
+    font-size: 8.5pt;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display:flex;
+   justify-content:center;
+
+  }
+
+  .mat-raised-button{
+    background-color:rgb(2, 38, 56);
+    color: rgb(38, 207, 114);;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+    font-weight: bold
+  }
+
+  .mat-button{
+    background-color:rgb(255, 51, 51);
+    color: rgb(0,0,0);;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+    font-weight: bold
+  }
+

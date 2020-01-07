@@ -1,0 +1,36 @@
+<mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container
+    *ngFor="let disCol of displayedColumns; let colIndex = index"
+    matColumnDef="{{ disCol }}"
+  >
+    <mat-header-cell class="custom" *matHeaderCellDef>{{
+      disCol
+    }}</mat-header-cell>
+    <mat-cell class="custom" *matCellDef="let element">
+      {{ element[disCol] }}
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+<br />
+<div class="custom">Is data looking good?</div>
+<mat-dialog-actions class="actions">
+  <button
+    class="custom"
+    (click)="closeModal('ok')"
+    mat-raised-button
+    mat-dialog-close
+  >
+    Yes
+  </button>
+  <button
+    class="custom"
+    mat-button
+    color="primary"
+    (click)="closeModal('Not ok')"
+  >
+    No
+  </button>
+</mat-dialog-actions>

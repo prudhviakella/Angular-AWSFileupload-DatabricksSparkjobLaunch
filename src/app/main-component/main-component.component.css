@@ -1,0 +1,25 @@
+.mat-toolbar {
+  background-color: #333;
+}
+/* Tabs*/
+#tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color:  black;
+  border-bottom:  solid #49789e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  padding-bottom: 0.5em;
+
+}
+
+#tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:not(.active) {
+  color:  #888;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+
+#tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:hover {
+  color:  black;
+}
